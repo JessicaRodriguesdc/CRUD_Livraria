@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+	<h:head>
+		<title>Sistema de Livraria</title>
+		<link rel="stylesheet" type="text/css" href="styles/index.css"/>
+	</h:head>
+	<h:body>
+		<img src="assets/img/livro.jpg"/>
+		<h2>Livraria Rodrigues</h2>		
+			
+		<h:form> 
+		<div class="main_button">
+			<center><h:commandButton action="novoLivro" actionlistener="#{Beanlivro.novo}" value="Novo Livro" /></center>
+		</div> 
+           	<h:dataTable binding="#{table}" value="#{Beanlivro.mostrarLivros()}" var="l" 
+           	class="table table-striped table-hover table-bordered">  
+				<h:column>  
+					<f:facet name="header">ID</f:facet>  
+					<h:outputText value="#{table.rowIndex+1}"/>  
+				</h:column>  
+                <h:column> 
+                    <f:facet name="header"><h:outputText value="Livro"/></f:facet>
+                    <h:outputText value="#{l.nomeLivro}"/> 
+                </h:column> 
+                <h:column> 
+                    <f:facet name="header"><h:outputText value="Autor" /></f:facet> 
+                    <h:outputText value="#{l.autorLivro}"/> 
+                </h:column> 
+                <h:column> 
+                    <f:facet name="header"><h:outputText value="Ano do Livro" /></f:facet> 
+                    <h:outputText value="#{l.anoLivro}"/> 
+                </h:column>
+                <h:column> 
+                    <f:facet name="header"><h:outputText value="Genero" /></f:facet> 
+                    <h:outputText value="#{l.generoLivro}"/> 
+                </h:column> 
+                <h:column> 
+                    <f:facet name="header"><h:outputText value="Editora" /></f:facet> 
+                    <h:outputText value="#{l.editoraLivro}"/> 
+                </h:column> 
+                <h:column> 
+                    <f:facet name="header"><h:outputText value="Paginas" /></f:facet> 
+                    <h:outputText value="#{l.paginasLivro}"/> 
+                </h:column> 
+   				<h:column> 
+                    <f:facet name="header"><h:outputText value="Status" /></f:facet> 
+                    <h:outputText value="#{Beanlivro.getStatus(l.statusLivro)}"/> 
+                </h:column> 
+                <h:column> 
+                    <f:facet name="header"><h:outputText value="Ações" /></f:facet> 
+                    <h:commandButton action="#{Beanlivro.edit(l.id)}" value="Alterar"/> 
+                    <h:commandButton action="#{Beanlivro.remover(l.id)}" value="Remover"/> 
+                </h:column> 
+            </h:dataTable> 
+        </h:form> 
+        <footer>
+        	<h3>Desenvolvido por Jéssica Rodrigues e Marcelino Rodrigues</h3>
+        </footer>
+		
+	</h:body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:body> 
+        <h:form> 
+            <h:panelGrid columns="2"> 
+                <h:outputText value="Nome Livro" /> 
+                <h:inputText value="#{livro.nomeLivro}" /> 
+                <h:outputText value="Autor"/> 
+                <h:inputText value="#{livro.autorLivro}"/>
+                <h:outputText value="Ano do Livro"/> 
+                <h:inputText value="#{livro.anoLivro}"/>
+                <h:outputText value="Genero"/> 
+                <h:inputText value="#{livro.generoLivro}"/>
+                <h:outputText value="Editora"/> 
+                <h:inputText value="#{livro.editoraLivro}"/>
+                <h:outputText value="Paginas"/> 
+                <h:inputText value="#{livro.paginasLivro}"/>
+                <h:selectOneRadio value="#{livro.statusLivro}">
+                        <f:selectItem itemValue="D" itemLabel="Disponivel" />
+                        <f:selectItem itemValue="I" itemLabel="Indisponivel" />
+                </h:selectOneRadio>
+                <h:commandButton action="#{livro.save()}" class="btn btn-success" value="Inserir"/> 
+                <h:commandButton action="index" immediate="true" class="btn btn-success" value="Cancelar"/>
+            </h:panelGrid> 
+        </h:form> 
+    </h:body>
+</html>
