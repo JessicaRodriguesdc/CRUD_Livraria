@@ -104,7 +104,6 @@ public class Livro {
         if(result !=0)
             return "visualizarLivros.xhtml?faces-redirect=true";
         else return "novoLivro.xhtml?faces-redirect=true"; 
-    
     }
 	
 }

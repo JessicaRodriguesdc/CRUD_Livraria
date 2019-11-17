@@ -11,12 +11,12 @@
 		<link rel="stylesheet" type="text/css" href="styles/index.css"/>
 	</h:head>
 	<h:body>
-		<img src="assets/img/livro.jpg"/>
+		<h:graphicImage value="assets/img/livro.jpg"/>
 		<h2>Livraria Rodrigues</h2>		
 			
 		<h:form> 
 		<div class="main_button">
-			<center><h:commandButton action="novoLivro" actionlistener="#{Beanlivro.novo}" value="Novo Livro" /></center>
+			<center><h:commandButton action="novoLivro" value="Novo Livro" /></center>
 		</div> 
            	<h:dataTable binding="#{table}" value="#{Beanlivro.mostrarLivros()}" var="l" 
            	class="table table-striped table-hover table-bordered">  
