@@ -5,52 +5,87 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+<head>	
+	<link rel="stylesheet" type="text/css" href="styles/newbook.css"/>
+</head>
 
 <h:body> 
+		<h2>Livraria Rodrigues</h2>	
         <h:form> 
             <h:panelGrid columns="2"> 
                 <h:outputText value="Nome Livro" /> 
-                <h:inputText value="#{livro.nomeLivro}" id="livro" required ="true" requiredMessage="Livro é obrigátorio"/>
+                <h:inputText 
+                	value="#{livro.nomeLivro}" 
+                	id="livro"
+                	autocomplet="off" 
+                	required ="true" 
+                	requiredMessage="Livro é obrigátorio"/>
                 <h:message for ="livro"/>
                 <br></br>
                 
                 <h:outputText value="Autor"/>
-                <h:inputText value="#{livro.autorLivro}" id="autor" required ="true" requiredMessage="Autor é obrigátorio"/>
+                <h:inputText 
+                	value="#{livro.autorLivro}" 
+                	id="autor"
+                	autocomplet="off" 
+                	required ="true" 
+                	requiredMessage="Autor é obrigátorio"/>
                 <h:message for ="autor"/>
                 <br></br>
                 
                 <h:outputText value="Ano do Livro"/>
-                <h:inputText value="#{livro.anoLivro}" id="ano" required ="true" requiredMessage="Ano é obrigátorio">
+                <h:inputText 
+                	value="#{livro.anoLivro}" 
+                	id="ano"
+                	autocomplet="off" 
+                	required ="true" 
+                	requiredMessage="Ano é obrigátorio">
                 	<f:validateLength minimum = "4" maximum = "4"/>
                 </h:inputText>
                 <h:message for ="ano"/>
                 <br></br>
                 
                 <h:outputText value="Genero"/>     
-                <h:inputText value="#{livro.generoLivro}" id="genero" required ="true" requiredMessage="Genero é obrigátorio"/>
+                <h:inputText 
+                	value="#{livro.generoLivro}" 
+                	id="genero"
+                	autocomplet="off" 
+                	required ="true" 
+                	requiredMessage="Genero é obrigátorio"/>
                 <h:message for ="genero"/>
                 <br></br>
                 
                 <h:outputText value="Editora"/> 
-                <h:inputText value="#{livro.editoraLivro}" id="editora" required ="true" requiredMessage="Editora é obrigátorio"/>
+                <h:inputText 
+                	value="#{livro.editoraLivro}" 
+                	id="editora"
+                	autocomplet="off" 
+                	required ="true" 
+                	requiredMessage="Editora é obrigátorio"/>
                 <h:message for ="editora"/>
                 <br></br>
                 	
                 <h:outputText value="Paginas"/>
-                <h:inputText value="#{livro.paginasLivro}" id="pagina" required ="true" requiredMessage="Pagina é obrigátorio">
-                	<f:validateLength minimum = "10"/>
+                <h:inputText 
+                	value="#{livro.paginasLivro}" 
+                	id="pagina" 
+                	autocomplet="off"
+                	required ="true" 
+                	requiredMessage="Pagina é obrigátorio">
+                	<f:validateLength minimum = "2"/>
                 </h:inputText>
                 <h:message for ="pagina"/>
                 <br></br>                
                 
                 <h:selectOneRadio value="#{livro.statusLivro}" id="status" required ="true" requiredMessage="Status é obrigátorio">
                         <f:selectItem itemValue="D" itemLabel="Disponivel" />
-                        <f:selectItem itemValue="I" itemLabel="Indisponivel" />
+                        <f:selectItem itemValue="I" itemLabel="Indisponivel"/>
                 </h:selectOneRadio>
                 <h:message for ="status"/>
                 
-                <h:commandButton action="#{livro.save}" class="btn btn-success" value="Inserir"/> 
-                <h:commandButton action="visualizarLivros" immediate="true" class="btn btn-success" value="Cancelar"/>
+                <h:commandButton action="#{livro.save}" class="btn-alterar" value="Inserir" id="salvar"/> 
+                <h:commandButton action="visualizarLivros" immediate="true" class="btn-cancelar" value="Cancelar" id="cancelar"/>
             </h:panelGrid> 
         </h:form> 
     </h:body>

@@ -5,6 +5,10 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+<head>	
+	<link rel="stylesheet" type="text/css" href="styles/newbook.css"/>
+</head>
 
 <h:body> 
         <h:form> 
@@ -26,9 +30,9 @@
                         <f:selectItem itemValue="D" itemLabel="Disponivel"/>
                         <f:selectItem itemValue="I" itemLabel="Indisponivel" />
                 </h:selectOneRadio>
-                <h:commandButton action="#{Beanlivro.alterar(editLivro)}" class="btn btn-primary" value="Alterar">
+                <h:commandButton action="#{Beanlivro.alterar(editLivro)}" class="btn-alterar" value="Alterar" id="alterar">
                 </h:commandButton> 
-                <h:commandButton action="index" immediate="true" class="btn btn-success" value="Cancelar" />     
+                <h:commandButton action="index" immediate="true" class="btn-cancelar" value="Cancelar" id="cancelar"/>     
             </h:panelGrid> 
         </h:form> 
     </h:body>

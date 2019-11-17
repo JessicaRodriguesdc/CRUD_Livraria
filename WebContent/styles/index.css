@@ -5,19 +5,18 @@ body{
 h2{
 	text-align:center;
 	color:white;
-	margin-bottom:50px;
 	margin-top: 50px;
-	background-color:black;
+	background-color:black; width:100%;
 	font-style:italic;
 	font-size:30px;
 }
 input{
-	padding:0.7em;
-	margin-top:13px;
-	margin-right:2px;
-	width:130px;
-	border: solid 1px white;
-	border-radius: 20%!important;
+	padding: 0.7em;
+    margin-top: 13px;
+    margin-right: 2px;
+    width: 130px;
+    border: solid 1px white;
+    border-radius: 20%!important;
 }
 form{
 	margin: 50px auto;
@@ -28,10 +27,16 @@ form dataTable column{
 	display:inline-block;
 }
 th{
-	text-align:left;
+	text-align:center;
 	padding: 10px 50px;
 	background-color:tan;
-	border-radius: 10%!important;
+}
+td{
+	width:100%;
+	text-align:center;
+}
+.table{
+	margin-top:50px;
 }
 tbody{
 	background-color:white;
@@ -49,7 +54,6 @@ img{
 footer{
 	background-color:black;
 	color:white;
-    position:absolute;
     bottom:0;
     width:100%;
     text-align:center;
