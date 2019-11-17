@@ -22,7 +22,7 @@ public class BeanLivro {
 	        if(editar == true) {
 	        return "/alterarLivro.xhtml?faces-redirect=true";
 	        }else {
-	        	return "/index.xhtml?faces-redirect=true";
+	        	return "/visualizarLivros.xhtml?faces-redirect=true";
 	        }
 	        
 	    }
@@ -31,7 +31,7 @@ public class BeanLivro {
 	        boolean result = Daolivro.update(l);
 	        
 	        if(result == true) {
-		        return "/index.xhtml?faces-redirect=true";
+		        return "/visualizarLivros.xhtml?faces-redirect=true";
 		        }else {
 		        	return "/alterarLivro.xhtml?faces-redirect=true";
 		        }     

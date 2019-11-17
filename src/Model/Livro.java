@@ -102,7 +102,7 @@ public class Livro {
             System.out.println(e);
         }
         if(result !=0)
-            return "index.xhtml?faces-redirect=true";
+            return "visualizarLivros.xhtml?faces-redirect=true";
         else return "novoLivro.xhtml?faces-redirect=true"; 
     
     }
