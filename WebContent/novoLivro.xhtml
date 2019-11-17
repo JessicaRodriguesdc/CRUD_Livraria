@@ -10,21 +10,41 @@
         <h:form> 
             <h:panelGrid columns="2"> 
                 <h:outputText value="Nome Livro" /> 
-                <h:inputText value="#{livro.nomeLivro}" /> 
-                <h:outputText value="Autor"/> 
-                <h:inputText value="#{livro.autorLivro}"/>
-                <h:outputText value="Ano do Livro"/> 
-                <h:inputText value="#{livro.anoLivro}"/>
-                <h:outputText value="Genero"/> 
-                <h:inputText value="#{livro.generoLivro}"/>
+                <h:inputText value="#{livro.nomeLivro}" validatorMessage="Nome Livro is required">
+                	<f:validateRequired/>
+                </h:inputText> 
+                
+                <h:outputText value="Autor"/>
+                <h:inputText value="#{livro.autorLivro}" validatorMessage="Autor is required">
+                	<f:validateRequired/> 
+                </h:inputText>
+                
+                <h:outputText value="Ano do Livro"/>
+                <h:inputText value="#{livro.anoLivro}" validatorMessage="Ano do Livro is required">
+                  <f:validateRequired/> 
+                </h:inputText>
+                
+                <h:outputText value="Genero"/>     
+                <h:inputText value="#{livro.generoLivro}" validatorMessage="Genero is required">
+                	<f:validateRequired/> 
+                </h:inputText>
+                
                 <h:outputText value="Editora"/> 
-                <h:inputText value="#{livro.editoraLivro}"/>
-                <h:outputText value="Paginas"/> 
-                <h:inputText value="#{livro.paginasLivro}"/>
-                <h:selectOneRadio value="#{livro.statusLivro}">
+                <h:inputText value="#{livro.editoraLivro}" validatorMessage="Editora is required">
+                	<f:validateRequired/> 
+                </h:inputText>
+                	
+                <h:outputText value="Paginas"/>
+                <h:inputText value="#{livro.paginasLivro}" validatorMessage="Paginas is required">
+                	<f:validateRequired/>
+                </h:inputText>
+                
+                <h:selectOneRadio value="#{livro.statusLivro}" validatorMessage="Status is required">
                         <f:selectItem itemValue="D" itemLabel="Disponivel" />
                         <f:selectItem itemValue="I" itemLabel="Indisponivel" />
+                        <f:validateRequired/>
                 </h:selectOneRadio>
+                
                 <h:commandButton action="#{livro.save()}" class="btn btn-success" value="Inserir"/> 
                 <h:commandButton action="index" immediate="true" class="btn btn-success" value="Cancelar"/>
             </h:panelGrid> 
