@@ -51,29 +51,8 @@ public class DaoLivro {
         }
         return livroList;
     }
-    // Used to save user record
-	public int save(){
-    	conn = new Conexao();
-        int result = 0;
-        try{
-            connec = conn.getConn();
-            PreparedStatement stmt = connec.prepareStatement("insert into livro(nomeLivro,autorLivro,anoLivro,generoLivro,editoraLivro,paginasLivro,statusLivro) values(?,?,?,?,?,?,?)");
-            stmt.setString(1,livro.getNomeLivro());  
-            stmt.setString(2,livro.getAutorLivro());  
-            stmt.setInt(3,livro.getAnoLivro());  
-            stmt.setString(4,livro.getGeneroLivro());  
-            stmt.setString(5,livro.getEditoraLivro());
-            stmt.setInt(6,livro.getPaginasLivro()); 
-            stmt.setString(7,livro.getStatusLivro());
-            
-            result = stmt.executeUpdate();
-            conn.fecharConexao();
-        }catch(Exception e){
-            System.out.println(e);
-        }
-        return result;
-    }
-	 public boolean edit(int id){
+    
+	 public boolean editarLivro(int id){
 		 	Livro livro =null;
 	    	conn = new Conexao();
 	        System.out.println(id);

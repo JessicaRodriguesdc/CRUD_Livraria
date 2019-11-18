@@ -83,7 +83,7 @@ public class Livro {
     public Connection connec;
 	Conexao conn;
 	
-	public String save(){
+	public String novoLivro(){
     	conn = new Conexao();
         int result = 0;
         try{

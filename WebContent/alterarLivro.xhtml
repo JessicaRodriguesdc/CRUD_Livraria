@@ -30,9 +30,9 @@
                         <f:selectItem itemValue="D" itemLabel="Disponivel"/>
                         <f:selectItem itemValue="I" itemLabel="Indisponivel" />
                 </h:selectOneRadio>
-                <h:commandButton action="#{Beanlivro.alterar(editLivro)}" class="btn-alterar" value="Alterar" id="alterar">
+                <h:commandButton action="#{Beanlivro.alterarLivro(editLivro)}" class="btn-alterar" value="Alterar" id="alterar">
                 </h:commandButton> 
-                <h:commandButton action="index" immediate="true" class="btn-cancelar" value="Cancelar" id="cancelar"/>     
+                <h:commandButton action="visualizarLivros" immediate="true" class="btn-cancelar" value="Cancelar" id="cancelar"/>     
             </h:panelGrid> 
         </h:form> 
     </h:body>

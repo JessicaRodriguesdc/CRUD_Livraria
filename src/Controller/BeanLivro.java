@@ -16,9 +16,9 @@ public class BeanLivro {
     private Livro livro;
     
 	 
-	 	public String edit(int id){
+	 	public String editarLivro(int id){
 	        Daolivro = new DaoLivro();
-	        boolean editar = Daolivro.edit(id);
+	        boolean editar = Daolivro.editarLivro(id);
 	        if(editar == true) {
 	        return "/alterarLivro.xhtml?faces-redirect=true";
 	        }else {
@@ -26,7 +26,7 @@ public class BeanLivro {
 	        }
 	        
 	    }
-	    public String alterar(Livro l){
+	    public String alterarLivro(Livro l){
 	        Daolivro = new DaoLivro();
 	        boolean result = Daolivro.update(l);
 	        
@@ -37,7 +37,7 @@ public class BeanLivro {
 		        }     
 	    }
 	    
-	    public void remover(int id){
+	    public void removerLivro(int id){
 	        Daolivro = new DaoLivro();
 	        Daolivro.delete(id);
 	    }
