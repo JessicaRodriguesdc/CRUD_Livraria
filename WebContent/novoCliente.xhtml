@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<head>	
+	<link rel="stylesheet" type="text/css" href="styles/main.css"/>
+</head>
+
+<h:body> 
+		 <h2>Novo Cliente</h2>
+        <h:form> 
+            <h:panelGrid columns="2"> 
+                <h:outputText value="Nome"/> 
+                <h:inputText 
+                	value="#{cliente.nomeCliente}" 
+                	id="cliente"
+                	type="text"
+                	autocomplet="off" 
+                	required ="true" 
+                	requiredMessage="Nome é obrigátorio"/>
+                <h:message for ="cliente"/>
+                <br></br>
+                
+                <h:outputText value="Cpf"/>
+                <h:inputText 
+                	value="#{cliente.cpf}" 
+                	id="cpf"
+                	type="number"
+                	autocomplet="off" 
+                	required ="true">
+                	<f:validateLength minimum = "11" maximum = "11"/>
+                </h:inputText>
+                <h:message for ="cpf"/>
+                <br></br>
+                
+                <h:outputText value="Telefone"/>     
+                <h:inputText 
+                	value="#{cliente.telefone}" 
+                	id="tel"
+                	type="tel"
+                	autocomplet="off" 
+                	required ="true" 
+                	requiredMessage="Telefone é obrigátorio"/>
+                <h:message for ="tel"/>
+                <br></br>
+                
+                <h:commandButton action="#{cliente.novoCliente}" class="btn" value="Inserir" id="salvar"/> 
+                <h:commandButton action="visualizarClientes" immediate="true" class="btn-cancelar" value="Cancelar" id="cancelar"/>
+            </h:panelGrid> 
+        </h:form> 
+       
+    </h:body>
+    
+</html>

@@ -7,17 +7,18 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 	
 <head>	
-	<link rel="stylesheet" type="text/css" href="styles/newbook.css"/>
+	<link rel="stylesheet" type="text/css" href="styles/main.css"/>
 </head>
 
 <h:body> 
-		<h2>Livraria Rodrigues</h2>	
+		 <h2>Novo Livro</h2>	
         <h:form> 
             <h:panelGrid columns="2"> 
                 <h:outputText value="Nome Livro" /> 
                 <h:inputText 
                 	value="#{livro.nomeLivro}" 
                 	id="livro"
+                	type="text"
                 	autocomplet="off" 
                 	required ="true" 
                 	requiredMessage="Livro é obrigátorio"/>
@@ -28,6 +29,7 @@
                 <h:inputText 
                 	value="#{livro.autorLivro}" 
                 	id="autor"
+                	type="text"
                 	autocomplet="off" 
                 	required ="true" 
                 	requiredMessage="Autor é obrigátorio"/>
@@ -38,9 +40,9 @@
                 <h:inputText 
                 	value="#{livro.anoLivro}" 
                 	id="ano"
+                	type="number"
                 	autocomplet="off" 
-                	required ="true" 
-                	requiredMessage="Ano é obrigátorio">
+                	required ="true">
                 	<f:validateLength minimum = "4" maximum = "4"/>
                 </h:inputText>
                 <h:message for ="ano"/>
@@ -50,6 +52,7 @@
                 <h:inputText 
                 	value="#{livro.generoLivro}" 
                 	id="genero"
+                	type="text"
                 	autocomplet="off" 
                 	required ="true" 
                 	requiredMessage="Genero é obrigátorio"/>
@@ -60,6 +63,7 @@
                 <h:inputText 
                 	value="#{livro.editoraLivro}" 
                 	id="editora"
+                	type="text"
                 	autocomplet="off" 
                 	required ="true" 
                 	requiredMessage="Editora é obrigátorio"/>
@@ -71,8 +75,7 @@
                 	value="#{livro.paginasLivro}" 
                 	id="pagina" 
                 	autocomplet="off"
-                	required ="true" 
-                	requiredMessage="Pagina é obrigátorio">
+                	required ="true">
                 	<f:validateLength minimum = "2"/>
                 </h:inputText>
                 <h:message for ="pagina"/>
@@ -80,13 +83,14 @@
                 
                 <h:selectOneRadio value="#{livro.statusLivro}" id="status" required ="true" requiredMessage="Status é obrigátorio">
                         <f:selectItem itemValue="D" itemLabel="Disponivel" />
-                        <f:selectItem itemValue="I" itemLabel="Indisponivel"/>
+                        <f:selectItem itemValue="A" itemLabel="Alugado"/>
                 </h:selectOneRadio>
                 <h:message for ="status"/>
                 
-                <h:commandButton action="#{livro.novoLivro}" class="btn-alterar" value="Inserir" id="salvar"/> 
+                <h:commandButton action="#{livro.novoLivro()}" class="btn" value="Inserir" id="salvar"/> 
                 <h:commandButton action="visualizarLivros" immediate="true" class="btn-cancelar" value="Cancelar" id="cancelar"/>
             </h:panelGrid> 
         </h:form> 
+      
     </h:body>
 </html>

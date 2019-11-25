@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<head>	
+	<link rel="stylesheet" type="text/css" href="styles/main.css"/>
+</head>
+<h:body> 
+ <h2>Alugar Livro</h2>
+        <h:form> 
+            <h:panelGrid columns="2"> 
+            	
+            	<h:outputLabel value="Livro"/>
+            	<h:outputLabel value="#{alugarLivro.nomeLivro}"/>
+            
+                <h:outputText value="Status"/> 
+                <h:selectOneRadio value="#{alugarLivro.statusLivro}" required ="true" requiredMessage="Status é obrigátorio">
+                        <f:selectItem itemValue="D" itemLabel="Disponivel"/>
+                        <f:selectItem itemValue="A" itemLabel="Alugar" />
+                </h:selectOneRadio>
+                    
+                <h:outputText value="clientes"/>             
+     			<h:selectOneMenu value="#{cliente}" required ="true">
+                    <f:selectItem itemLabel="-Clientes-"/>
+			        <f:selectItems value="#{BeanCliente.mostrarClientes()}" var="c" 
+			                        itemValue="#{c.id}" itemLabel="#{c.nomeCliente}"/>
+			    </h:selectOneMenu>
+	
+                <h:commandButton action="#{BeanAlugar.alugarLivro(alugarLivro,c.id)}" class="btn" value="Alugar" id="alugar">
+                </h:commandButton> 
+                <h:commandButton action="aluguelLivro" immediate="true" class="btn-cancelar" value="Cancelar" id="cancelar"/>     
+            </h:panelGrid> 
+        </h:form> 
+       
+    </h:body>
+</html>

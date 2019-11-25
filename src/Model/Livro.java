@@ -26,10 +26,12 @@ public class Livro {
 	private String editoraLivro;
 	private int paginasLivro;
 	private String statusLivro;
+	private Cliente cliente;
+	
+	
 	@SuppressWarnings("rawtypes")
 	public ArrayList livroList ;
     private Map<String,Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
-	
 	
 	public int getId() {
 		return id;
@@ -79,8 +81,15 @@ public class Livro {
 	public void setStatusLivro(String statusLivro) {
 		this.statusLivro = statusLivro;
 	}
-	
-    public Connection connec;
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public Connection connec;
 	Conexao conn;
 	
 	public String novoLivro(){
@@ -88,14 +97,15 @@ public class Livro {
         int result = 0;
         try{
             connec = conn.getConn();
-            PreparedStatement stmt = connec.prepareStatement("insert into livro(nomeLivro,autorLivro,anoLivro,generoLivro,editoraLivro,paginasLivro,statusLivro) values(?,?,?,?,?,?,?)");
+            PreparedStatement stmt = connec.prepareStatement("insert into livro(nomeLivro,autorLivro,anoLivro,generoLivro,editoraLivro,paginasLivro,statusLivro ,idCliente) values(?,?,?,?,?,?,?,0)");
             stmt.setString(1,nomeLivro);  
             stmt.setString(2,autorLivro);  
             stmt.setInt(3,anoLivro);  
             stmt.setString(4,generoLivro);  
             stmt.setString(5,editoraLivro);
             stmt.setInt(6,paginasLivro);
-            stmt.setString(7,statusLivro);         
+            stmt.setString(7,statusLivro);   
+            
             result = stmt.executeUpdate();
             conn.fecharConexao();
         }catch(Exception e){

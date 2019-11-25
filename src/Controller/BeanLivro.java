@@ -64,6 +64,23 @@ public class BeanLivro {
 	    public String getStatus(char statusLivro){
 	        if(statusLivro == 'D'){
 	            return "Disponivel";
-	        }else return "Indisponivel";
+	        }else if(statusLivro == 'A') {
+	        	return "Alugado";
+	        }
+			return null;
+	    }
+	    
+	    @SuppressWarnings("rawtypes")
+		public ArrayList mostrarLivrosDisponiveis() {
+	        Daolivro = new DaoLivro();
+	        ArrayList livros = Daolivro.alugarList();
+	        return livros;
+	    }
+	    
+	    @SuppressWarnings("rawtypes")
+		public ArrayList mostrarLivrosAlugados() {
+	        Daolivro = new DaoLivro();
+	        ArrayList livros = Daolivro.desalugarList();
+	        return livros;
 	    }
 }

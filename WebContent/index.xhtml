@@ -13,24 +13,29 @@
 	<h:body>
 		<h:graphicImage value="assets/img/livro.jpg"/>
 	
-		<h2>Livraria Rodrigues</h2>		
-			
+		<h2>Livraria Rodrigues</h2>
+
 		<h:form> 
 		<div class="main_button">
 			<center>
 			<h:commandButton action="visualizarLivros" value="Visualizar Livros"/>
-			<h:commandButton action="novoLivro" value="Cadastrar novo livro"/>
+			<h:commandButton action="visualizarClientes" value="Visualizar Cliente"/>
+			<h:commandButton action="aluguelLivro" value="Alugar Livro"/>
+			<h:commandButton action="devolverLivro" value="Devolver Livro"/>
 			</center>
 		</div> 
 		</h:form>
-		<div class="slideshow">
-			<img></img>
-			<img></img>
-			<img></img>
-		</div>
-		<footer>
-        	<h3>Desenvolvido por Jéssica Rodrigues e Marcelino Rodrigues</h3>
-        </footer>
+			<slider>
+				<slide><p>livraria Rodrigues</p></slide>
+				<slide><p>Desenvolvido por Jéssica Rodrigues e Marcelino Rodrigues</p></slide>
+				<slide><p>A leitura de todos bons livros é como uma conversa com os melhores espíritos dos 
+					séculos passados, que foram seus autores, e é uma conversa estudada, na qual eles nos 
+					revelam seus melhores pensamentos.</p></slide>
+				<slide><p>Uma livraria pode te mostrar tudo o que você precisa saber dede que você saiba 
+					para onde olhar.</p></slide>
+				<slide><p>Tenha uma otima experiência conosco</p></slide>
+			</slider>
+
 	</h:body>
 
 </html>

@@ -31,7 +31,7 @@ form input[type=submit]{
 	padding:1em;
 	border:none;
 }
-.btn-alterar:hover{
+.btn:hover{
 	background:teal;
 	border:solid 1px black;
 }
@@ -43,4 +43,12 @@ label{
 	margin-top:13px;
 	width:100%;
 	padding:1em;
+}
+footer{
+	background-color:black;
+	color:white;
+    bottom:0;
+    width:100%;
+    text-align:center;
+    font-style:italic;
 }

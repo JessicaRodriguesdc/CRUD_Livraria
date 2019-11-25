@@ -7,10 +7,11 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 	
 <head>	
-	<link rel="stylesheet" type="text/css" href="styles/newbook.css"/>
+	<link rel="stylesheet" type="text/css" href="styles/main.css"/>
 </head>
 
 <h:body> 
+ <h2>Alterar Livro</h2>
         <h:form> 
             <h:panelGrid columns="2"> 
                 <h:outputText value="Nome Livro" /> 
@@ -28,12 +29,13 @@
                 <h:outputText value="Status"/> 
                 <h:selectOneRadio value="#{editLivro.statusLivro}">
                         <f:selectItem itemValue="D" itemLabel="Disponivel"/>
-                        <f:selectItem itemValue="I" itemLabel="Indisponivel" />
+                        <f:selectItem itemValue="A" itemLabel="Alugado"/>
                 </h:selectOneRadio>
-                <h:commandButton action="#{Beanlivro.alterarLivro(editLivro)}" class="btn-alterar" value="Alterar" id="alterar">
+                <h:commandButton action="#{Beanlivro.alterarLivro(editLivro)}" class="btn" value="Alterar" id="alterar">
                 </h:commandButton> 
                 <h:commandButton action="visualizarLivros" immediate="true" class="btn-cancelar" value="Cancelar" id="cancelar"/>     
             </h:panelGrid> 
         </h:form> 
+        
     </h:body>
 </html>

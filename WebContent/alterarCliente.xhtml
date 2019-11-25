@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+
+<head>	
+	<link rel="stylesheet" type="text/css" href="styles/main.css"/>
+</head>
+
+<h:body> 
+ <h2>Alterar Cliente</h2>
+        <h:form>    
+            <h:panelGrid columns="2"> 
+                <h:outputText value="Nome Cliente" /> 
+                <h:inputText value="#{clienteLivro.nomeCliente}"/> 
+                <h:outputText value="Cpf"/> 
+                <h:inputText value="#{clienteLivro.cpf}"/> 
+                <h:outputText value="Telefone"/> 
+                <h:inputText value="#{clienteLivro.telefone}"/> 
+                
+                <h:commandButton action="#{BeanCliente.alterarCliente(clienteLivro)}" class="btn" value="Alterar" id="alterar">
+                </h:commandButton> 
+                <h:commandButton action="visualizarClientes" immediate="true" class="btn-cancelar" value="Cancelar" id="cancelar"/>     
+            </h:panelGrid> 
+        </h:form>
+        
+    </h:body>
+</html>
